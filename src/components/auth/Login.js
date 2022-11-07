@@ -22,7 +22,8 @@ function Login() {
         password,
       };
 
-      await requestClient.post("/auth/login", loginData);
+     const res = await requestClient.post("/auth/login", loginData);
+     localStorage.setItem('token', res.data.accessToken)
 
       await getLoggedIn();
 
