@@ -28,9 +28,7 @@ function DashList({ dashs }) {
         bonus,
         withdraw,
       };
-      await requestClient.post("dash/", dashData,{
-        withCredentials: true,
-      });
+      await requestClient.post("dash/", dashData);
 
       alert("Account is being set Up! Kindly refresh page in a few seconds");
       message.success("Details will be updated soon.");
@@ -56,8 +54,12 @@ function DashList({ dashs }) {
         <form className="mt-5" onSubmit={saveDash}>
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
             <div className="flex-auto p-5 lg:p-10">
-            
-              <button type="submit" className="bg-gray-900 p-2 text-white mx-auto">IMPORT</button>
+              <button
+                type="submit"
+                className="bg-gray-900 p-2 text-white mx-auto"
+              >
+                IMPORT
+              </button>
             </div>
           </div>
         </form>
